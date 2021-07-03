@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
-  title = 'p002-angular-chrome-debugger';
+  title = 'Angular-Express Webapp';
 
   constructor(){
     console.log("App Component is being initialized.....");

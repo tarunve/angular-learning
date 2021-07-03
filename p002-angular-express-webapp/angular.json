@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "p002-angular-chrome-debugger": {
+        "p002-angular-express-webapp": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:application": {
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/p002-angular-chrome-debugger",
+                        "outputPath": "dist/p002-angular-express-webapp",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -71,10 +71,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "p002-angular-chrome-debugger:build:production"
+                            "browserTarget": "p002-angular-express-webapp:build:production"
                         },
                         "development": {
-                            "browserTarget": "p002-angular-chrome-debugger:build:development"
+                            "browserTarget": "p002-angular-express-webapp:build:development"
                         }
                     },
                     "defaultConfiguration": "production"
@@ -90,7 +90,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "p002-angular-chrome-debugger:build"
+                        "browserTarget": "p002-angular-express-webapp:build"
                     }
                 },
                 "test": {
@@ -113,5 +113,5 @@
             }
         }
     },
-    "defaultProject": "p002-angular-chrome-debugger"
+    "defaultProject": "p002-angular-express-webapp"
 }

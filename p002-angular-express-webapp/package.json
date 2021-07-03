@@ -1,5 +1,5 @@
 {
-    "name": "p002-angular-chrome-debugger",
+    "name": "p002-angular-express-webapp",
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
