@@ -3,7 +3,6 @@ import * as PKG from './package.json';
 import { join } from 'path';
 import helmet from 'helmet';
 import { json , urlencoded } from 'body-parser';
-import * as expressHandlebars from 'express-handlebars';
 import compression from 'compression';
 import { readFileSync } from 'fs';
 
@@ -12,15 +11,8 @@ const LOCAL_PORT = 8080;
 const PORT = process.env.PORT || LOCAL_PORT;
 const PATH_STATIC_PKG_ROUTE = `/pkg/${PKG.version}/web`;
 const DOCUMENT_ROOT = join(__dirname, 'production');
+const expressHandlebars = require('express-handlebars');
 
-const staticPath = function(pkg){
-    return function(req, res, next) : void {
-        req.myPath = `pkg/${pkg.version}/web`
-        next();
-    }
-}
-
-APP.use(staticPath(PKG));
 APP.use(helmet());
 APP.use(compression());
 APP.use(urlencoded({ extended : false}));
@@ -55,7 +47,11 @@ APP.get('/', function(req, res){
     )
     .replace(/{STATIC_PATH}/, `pkg/${PKG.version}/web`)
     )
-})
+});
+
+APP.get('/health', function(req, res){
+    res.status(200).send("Server is up and running");
+});
 
 APP.listen(PORT, () => {
     console.info(`Node application ${PKG.name} has started their node server on port ${PORT}`);
