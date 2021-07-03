@@ -3,10 +3,16 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
+        "serve": "ng serve",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
-        "test": "ng test"
+        "test": "ng test",
+        "start": "node dist/server",
+        "build:client:production": "ng build --configuration=production --deploy-url=pkg/$npm_package_version/web/ && bread-compressor dist/production",
+        "build:server": "tsc --project tsconfig.server.json",
+        "build:production": "npm run build:client:production && npm run build:server",
+        "start:production": "npm run start ANGULAR_ENV=production DEPLOYMENT_ENV=production NODE_ENV=production PORT=8080",
+        "serve:production": "npm run build:production && npm run start:production"
     },
     "private": true,
     "dependencies": {
@@ -18,6 +24,16 @@
         "@angular/platform-browser": "~12.0.1",
         "@angular/platform-browser-dynamic": "~12.0.1",
         "@angular/router": "~12.0.1",
+        "@types/body-parser": "^1.19.0",
+        "@types/compression": "^1.7.0",
+        "@types/express": "^4.17.12",
+        "@types/express-handlebars": "^5.3.0",
+        "body-parser": "^1.19.0",
+        "bread-compressor-cli": "^1.1.0",
+        "compression": "^1.7.4",
+        "express": "^4.17.1",
+        "express-handlebars": "^5.3.2",
+        "helmet": "^4.6.0",
         "rxjs": "~6.6.0",
         "tslib": "^2.1.0",
         "zone.js": "~0.11.4"

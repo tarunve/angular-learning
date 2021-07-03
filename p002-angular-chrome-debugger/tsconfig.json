@@ -4,17 +4,23 @@
     "compileOnSave": false,
     "compilerOptions": {
         "baseUrl": "./",
-        "outDir": "./dist/out-tsc",
+        "outDir": "./dist",
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "noImplicitReturns": true,
+        "noImplicitAny": false,
+        "noLib": false,
+        "allowSyntheticDefaultImports": true,
+        "emitDecoratorMetadata": true,
         "noFallthroughCasesInSwitch": true,
         "sourceMap": true,
-        "declaration": false,
+        "declaration": true,
         "downlevelIteration": true,
         "experimentalDecorators": true,
         "moduleResolution": "node",
         "importHelpers": true,
+        "resolveJsonModule": true,
+        "removeComments": true,
         "target": "es2017",
         "module": "es2020",
         "lib": [
@@ -27,5 +33,8 @@
         "strictInjectionParameters": true,
         "strictInputAccessModifiers": true,
         "strictTemplates": true
-    }
+    },
+    "exclude": [
+        "node_modules"
+    ]
 }
