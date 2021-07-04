@@ -35,6 +35,8 @@ APP.engine(
         }
     })
 );
+APP.set('view engine', 'html');
+APP.set('views', DOCUMENT_ROOT);
 
 APP.get('/', function(req, res){
         res.send(readFileSync(join(

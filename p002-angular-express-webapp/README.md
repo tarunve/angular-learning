@@ -1,6 +1,6 @@
 # Angular Express Integrated Webapp
 
-This project is basically a sample webapp for integration of **Angular** (for **client side code**) and **ecpress** (for **server side code**). 
+This project is basically a sample webapp for integration of **Angular** (for **client side code**) and **express** (for **server side code**). 
 
 ---
 
