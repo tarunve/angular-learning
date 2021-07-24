@@ -23,13 +23,6 @@ describe('AppComponent', () => {
     it(`should have as title 'p002-angular-express-webapp`, () => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.componentInstance;
-        expect(app.title).toEqual('p002-angular-express-webapp');
-    });
-
-    it('should render title', () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        fixture.detectChanges();
-        const compiled = fixture.nativeElement;
-        expect(compiled.querySelector('.content span').textContent).toContain('p002-angular-express-webapp app is running!');
+        expect(app.title).toEqual('Angular-Express Webapp');
     });
 });

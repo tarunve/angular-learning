@@ -25,17 +25,22 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/p002-angular-express-webapp'),
+      dir: require('path').join(__dirname, './reports/coverage'),
       subdir: '.',
       reporters: [
-        { type: 'html' },
-        { type: 'text-summary' }
+        { type: 'html', subdir: 'report-html' },
+        { type: 'lcovonly', subdir: '.' },
+        { type: 'text', subdir: '.' },
+        { type: 'text-summary', subdir: '.' },
       ]
     },
-    reporters: ['progress', 'kjhtml'],
+    preprocessors: {
+        'src/**/*.ts': ['coverage']
+    },
+    reporters: ['progress', 'kjhtml', 'coverage'],
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,

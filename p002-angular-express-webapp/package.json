@@ -6,7 +6,7 @@
         "serve": "ng serve",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
-        "test": "ng test",
+        "test": "ng test --watch=false",
         "start": "node dist/server",
         "build:client:dev": "ng build --configuration=development --deploy-url=pkg/$npm_package_version/web/ && bread-compressor dist/development",
         "build:client:production": "ng build --configuration=production --deploy-url=pkg/$npm_package_version/web/ && bread-compressor dist/production",
