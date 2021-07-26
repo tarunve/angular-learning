@@ -19,7 +19,7 @@
         "esModuleInterop": true
     },
     "files": [
-        "./server.ts"
+        "./server-src/server.ts"
     ],
     "exclude": [
         "node_modules"

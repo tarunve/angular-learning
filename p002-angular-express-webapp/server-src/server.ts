@@ -1,17 +1,18 @@
 import express from 'express';
-import * as PKG from './package.json';
+import * as PKG from '../package.json';
 import { join } from 'path';
 import helmet from 'helmet';
 import { json , urlencoded } from 'body-parser';
 import compression from 'compression';
 import { readFileSync } from 'fs';
-import * as environment from './src/environments/environment';
+import * as environment from './../src/environments/environment';
+import getRouter from './routes/router'
 
 const APP = express();
 const LOCAL_PORT = 8080;
 const PORT = process.env.PORT || LOCAL_PORT;
 const PATH_STATIC_PKG_ROUTE = `/pkg/${PKG.version}/web`;
-const DOCUMENT_ROOT = join(__dirname, 'production');
+const DOCUMENT_ROOT = join(process.cwd(), 'dist', 'production');
 const expressHandlebars = require('express-handlebars');
 
 console.info("Tarun is printing env vars :: " + JSON.stringify(environment));
@@ -40,6 +41,7 @@ APP.engine(
 );
 APP.set('view engine', 'html');
 APP.set('views', DOCUMENT_ROOT);
+APP.use('/', getRouter());
 
 APP.get('/', function(req, res){
         res.send(readFileSync(join(
@@ -52,10 +54,6 @@ APP.get('/', function(req, res){
     )
     .replace(/{STATIC_PATH}/, `pkg/${PKG.version}/web`)
     )
-});
-
-APP.get('/health', function(req, res){
-    res.status(200).send("Server is up and running");
 });
 
 APP.listen(PORT, () => {
