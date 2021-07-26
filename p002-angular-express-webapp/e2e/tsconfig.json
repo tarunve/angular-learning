@@ -1,0 +1,17 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./out-tsc/app",
+        "baseUrl": "../node_modules",
+        "target": "es5",
+        "types": [
+            "cypress",
+            "node"
+        ]
+    },
+    "include": [
+        "**/*.ts",
+        "../node_modules/cypress"
+    ]
+}

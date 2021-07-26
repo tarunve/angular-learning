@@ -1,0 +1,16 @@
+{
+    "baseUrl": "http://localhost:8080",
+    "fileServerFolder": ".",
+    "fixturesFolder": "./e2e/src/fixtures",
+    "integrationFolder": "./e2e/src/integration",
+    "pluginsFile": "./e2e/src/plugins/index",
+    "testFiles": "**/*.feature",
+    "supportFile": false,
+    "video": true,
+    "videosFolder": "../reports/cypress/e2e/videos",
+    "screenshotsFolder": "../reports/cypress/e2e/screenshots",
+    "chromeWebSecurity": false,
+    "include": [
+        "src/**/*.ts"
+    ]
+}
