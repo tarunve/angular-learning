@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'p003-angular-nestjs-webapp';
+  title = 'Angular-NestJS Webapp';
 }
