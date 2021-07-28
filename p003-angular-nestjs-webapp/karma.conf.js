@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/p003-angular-nestjs-webapp'),
+      dir: require('path').join(__dirname, './reports/coverage'),
       subdir: '.',
       reporters: [
         { type: 'html' },
