@@ -7,6 +7,7 @@ import compression from 'compression';
 import { readFileSync } from 'fs';
 import * as environment from './src/environments/environment';
 import getRouter from './server-src/routes/router'
+import { getConfig } from './server-src/config/config';
 
 const APP = express();
 const LOCAL_PORT = 8080;
@@ -16,6 +17,8 @@ const DOCUMENT_ROOT = join(__dirname, 'production');
 const expressHandlebars = require('express-handlebars');
 
 console.info("Tarun is printing env vars :: " + JSON.stringify(environment));
+console.info("Tarun is printing dev config :: " + JSON.stringify(getConfig('dev')));
+console.info("Tarun is printing prod config :: " + JSON.stringify(getConfig('prod')));
 
 APP.use(helmet());
 APP.use(compression());

@@ -13,7 +13,9 @@
         "start:background": "npm run start ANGULAR_ENV=production DEPLOYMENT_ENV=production NODE_ENV=production PORT=8080 & echo $! >server.pid",
         "test": "npm run test:unit && npm run test:e2e",
         "test:e2e": "npm run build:production && npm run start:background && npm run cypress:run && npm run stop:server",
-        "test:unit": "ng test --watch=false",
+        "test:unit": "npm run test:unit:client && npm run test:unit:server",
+        "test:unit:client": "ng test --watch=false",
+        "test:unit:server": "jest",
         "stop:server": "pkill -F server.pid && rm -rf server.pid"
     },
     "private": true,
@@ -49,15 +51,19 @@
         "@angular/cli": "~12.0.1",
         "@angular/compiler-cli": "~12.0.1",
         "@types/jasmine": "~3.6.0",
+        "@types/jest": "^26.0.24",
         "@types/node": "^12.11.1",
         "cypress": "^8.0.0",
         "cypress-cucumber-preprocessor": "^4.1.4",
         "jasmine-core": "~3.7.0",
+        "jest": "^27.0.6",
         "karma": "~6.3.0",
         "karma-chrome-launcher": "~3.1.0",
         "karma-coverage": "~2.0.3",
         "karma-jasmine": "~4.0.0",
         "karma-jasmine-html-reporter": "^1.5.0",
+        "ts-jest": "^27.0.4",
+        "ts-node": "^10.1.0",
         "typescript": "~4.2.3"
     }
 }
