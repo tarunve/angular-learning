@@ -54,21 +54,6 @@
                             ],
                             "outputHashing": "all",
                             "outputPath": "dist/production"
-                        },
-                        "development": {
-                            "buildOptimizer": false,
-                            "optimization": false,
-                            "vendorChunk": true,
-                            "extractLicenses": false,
-                            "sourceMap": true,
-                            "namedChunks": true,
-                            "fileReplacements": [
-                                {
-                                    "replace": "src/environments/environment.ts",
-                                    "with": "src/environments/environment.dev.ts"
-                                }
-                            ],
-                            "outputPath": "dist/development"
                         }
                     },
                     "defaultConfiguration": "production"

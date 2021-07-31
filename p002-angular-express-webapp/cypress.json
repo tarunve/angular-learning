@@ -7,8 +7,8 @@
     "testFiles": "**/*.feature",
     "supportFile": false,
     "video": true,
-    "videosFolder": "../reports/cypress/e2e/videos",
-    "screenshotsFolder": "../reports/cypress/e2e/screenshots",
+    "videosFolder": "./reports/e2e/videos",
+    "screenshotsFolder": "./reports/e2e/screenshots",
     "chromeWebSecurity": false,
     "include": [
         "src/**/*.ts"
