@@ -21,11 +21,12 @@ export default {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-      'server-src/**/*.ts'
+      'server-src/**/*.ts',
+      '!server-src/routes/router.ts'
   ],
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "../reports/server/coverage",
+  coverageDirectory: "./reports/server/coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
@@ -44,7 +45,14 @@ export default {
   ],
 
   // An object that configures minimum threshold enforcement for coverage results
-  // coverageThreshold: undefined,
+  coverageThreshold: {
+    global: {
+        branches: 100,
+        functions: 100,
+        lines: 100,
+        statements: 100,
+    },
+  },
 
   // A path to a custom dependency extractor
   // dependencyExtractor: undefined,

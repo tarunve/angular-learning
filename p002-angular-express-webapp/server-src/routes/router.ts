@@ -1,12 +1,16 @@
-import express from 'express';
 
-const router = express.Router();
+import { Router } from 'express';
+import { getHealthMiddleware } from './health/health.middleware';
+import { getSaveDataMiddleware } from './save-data/save-data.middleware';
+
+const router = Router();
 
 export default function getRouter() {
-    router.get('/health', function(req, res){
-        console.info(req);
-        res.status(200).send("Server is up and running");
-    })
+    const healthMiddleware = getHealthMiddleware();
+    const saveMiddleware = getSaveDataMiddleware();
+    
+    router.get('/health', (req, res) => healthMiddleware(req, res));
+    router.post('/save', (req, res, next) => saveMiddleware(req, res, next));
 
     return router;
 }
