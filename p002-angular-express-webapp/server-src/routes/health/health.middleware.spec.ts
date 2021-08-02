@@ -12,6 +12,10 @@ const mockResponse : Response = ({
 } as unknown) as Response;
 
 describe('when health middleware is called', () => {
+    beforeAll(() => {
+        console.info = jest.fn().mockImplementation(() => {})
+    })
+    
     it('getHealthMiddleware is retrieved', async () => {
         const middleware = getHealthMiddleware()
         middleware(mockRequest, mockResponse);
