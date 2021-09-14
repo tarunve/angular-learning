@@ -2,15 +2,13 @@ import { All, Controller, Get, Header, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { AppService } from './app.service';
 
-@Controller('api')
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+@Controller()
+export class ServerController {
 
   @Get('hello')
   getHello(): string {
-    return this.appService.getHello();
+    return 'Hello World!';
   }
 
   @All()

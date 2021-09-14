@@ -13,7 +13,13 @@ module.exports = {
     resolver: '@nrwl/jest/plugins/resolver',
     moduleFileExtensions: ['ts', 'js', 'html'],
     collectCoverage: true,
-    collectCoverageFrom: ['**/*.ts'],
+    collectCoverageFrom: [
+        '**/*.ts',
+        '!src/main.ts',
+        '!src/polyfills.ts',
+        '!src/environments/environment.*ts',
+        '!server-src/server.ts'
+    ],
     coverageDirectory: 'reports/coverage/unit',
     coverageThreshold: {
         global: {

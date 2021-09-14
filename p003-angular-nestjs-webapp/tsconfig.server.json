@@ -13,6 +13,10 @@
       "outDir": "dist",
       "baseUrl": "./",
       "types": ["node"],
+      "lib": [
+        "es2018",
+        "dom"
+      ]
     },
     "files": ["server-src/server.ts"],
     "exclude": ["node_modules"]
