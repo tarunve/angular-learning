@@ -13,7 +13,7 @@ export class ServerController {
 
   @All()
   @Header('Content-Type', 'text/html')
-  root(@Req() request: Request, @Res() response: Response): void {
+  root(@Req() _request: Request, @Res() response: Response): void {
     response.send(readFileSync(join(__dirname, 'production'), { encoding : 'utf8'}));
   }
 }

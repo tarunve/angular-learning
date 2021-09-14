@@ -27,9 +27,8 @@ describe('AppController', () => {
                 send: jest.fn()
             } as unknown as Response;
 
-            jest.spyOn(fs, 'readFileSync').mockReturnValue('<html></html>')
-            // expect(serverController.root(mockRequest, mockResponse)).toBe('<html></html>');
-            // expect(mockResponse.send).toHaveBeenCalled();
+            jest.spyOn(fs, 'readFileSync').mockReturnValue('<html></html>');
+            expect(serverController.root(mockRequest, mockResponse)).toBeUndefined();
         });
     });
 });
